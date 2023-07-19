@@ -3,6 +3,7 @@ import { Header, defaultProps, type HeaderProps } from "./header";
 
 const meta: Meta<HeaderProps> = {
   component: Header,
+  parameters: { layout: 'fullscreen' },
   decorators: [
     (Story) => (
       <div style="background: #000">

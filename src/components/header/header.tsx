@@ -1,5 +1,5 @@
-import { component$ } from "@builder.io/qwik";
-import styles from "./header.module.css";
+import { component$, useStyles$ } from "@builder.io/qwik";
+import styles from "./header.css?inline";
 import { FROGLogo } from "../icons/frog";
 
 interface Link {
@@ -21,10 +21,11 @@ export const defaultProps: HeaderProps = {
 }
 
 export const Header = component$<HeaderProps>((props = defaultProps) => {
+  useStyles$(styles);
   return (
-    <header class={styles.header}>
-      <nav class={styles.wrapper}>
-        <div class={styles.logo}>
+    <header class="header">
+      <nav>
+        <div>
           <a href="/" title="FROG Creative Studios">
             <FROGLogo height={67} width={97} />
             FROG Creative Studios

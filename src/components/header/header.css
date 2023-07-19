@@ -1,0 +1,13 @@
+.header {
+  border-block-end: 1px solid #fff;
+  color: white;
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
+
+  nav {
+    max-width: 1200px;
+  }
+}
