@@ -1,6 +1,6 @@
 module.exports = {
   plugins: {
-    "postcss-auto-rem": {size: 100},
+    "postcss-auto-rem": {size: 16},
     autoprefixer: {},
     "postcss-preset-env": {
       stage: 3,

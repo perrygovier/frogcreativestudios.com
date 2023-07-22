@@ -6,7 +6,7 @@ const meta: Meta<HeaderProps> = {
   parameters: { layout: 'fullscreen' },
   decorators: [
     (Story) => (
-      <div style="background: #000">
+      <div style="background: #000; min-height: 300px;">
         <Story />
       </div>
     ),

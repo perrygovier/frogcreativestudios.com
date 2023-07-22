@@ -1,27 +1,24 @@
 import { component$, useStylesScoped$, Slot } from "@builder.io/qwik";
 
 export interface ButtonProps {
-  size?: "small" | "medium" | "large";
+  href?: string;
 }
-export const Button = component$<ButtonProps>(({ size = "medium" }) => {
+export const Button = component$<ButtonProps>((props) => {
   useStylesScoped$(`
-    .size-small {
-      font-size: 10px;
-    }
-    .size-medium {
-      font-size: 14px;
-    }
-    .size-large {
-      font-size: 18px;
+    .btn {
+      background: var(--primary);
+      padding: 1em 1.5em;
+      min-width: 5em;
+      text-align: center;
+      display: inline-block;
     }
   `);
   return (
-    <button
-      class={{
-        [`size-${size}`]: true,
-      }}
+    <a
+      class="btn"
+      href={props.href}
     >
       <Slot></Slot>
-    </button>
+    </a>
   );
 });

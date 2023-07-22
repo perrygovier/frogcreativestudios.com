@@ -1,6 +1,7 @@
 import { component$, useStyles$ } from "@builder.io/qwik";
 import styles from "./header.css?inline";
 import { FROGLogo } from "../icons/frog";
+import { Button } from "../button/button";
 
 interface Link {
   label: string;
@@ -9,6 +10,7 @@ interface Link {
 export interface HeaderProps {
   links?: Link[];
   cta?: Link;
+  title: string;
 }
 
 export const defaultProps: HeaderProps = {
@@ -17,7 +19,9 @@ export const defaultProps: HeaderProps = {
     {label: "The Artists", url: "/artists"},
     {label: "Paint by Numbers", url: "/shop/paint-by-numbers"},
     {label: "Puzzles", url: "/shop/puzzles"},
-  ]
+  ],
+  cta: {label: "Shop", url: "/shop"},
+  title: "FROG Creative Studios",
 }
 
 export const Header = component$<HeaderProps>((props = defaultProps) => {
@@ -26,9 +30,9 @@ export const Header = component$<HeaderProps>((props = defaultProps) => {
     <header class="header">
       <nav>
         <div>
-          <a href="/" title="FROG Creative Studios">
+          <a href="/" title="FROG Creative Studios" class="logo">
             <FROGLogo height={67} width={97} />
-            FROG Creative Studios
+            <span>{props.title}</span>
           </a>
         </div>
         <ul>
@@ -37,11 +41,22 @@ export const Header = component$<HeaderProps>((props = defaultProps) => {
               <a
                 href={link.url}
                 target="_blank"
+                class="btn header__link"
               >
                 {link.label}
               </a>
             </li>
           ))}
+
+          {props.cta ? (<li>
+            <Button
+              href={props.cta.url}
+              target="_blank"
+              class="btn"
+            >
+              {props.cta.label}
+            </Button>
+          </li>) : null}
         </ul>
       </nav>
     </header>
