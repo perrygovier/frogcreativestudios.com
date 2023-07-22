@@ -24,7 +24,7 @@ export const defaultProps: HeaderProps = {
   title: "FROG Creative Studios",
 }
 
-export const Header = component$<HeaderProps>((props = defaultProps) => {
+const Header = component$<HeaderProps>((props = defaultProps) => {
   useStyles$(styles);
   return (
     <header class="header">
@@ -49,11 +49,7 @@ export const Header = component$<HeaderProps>((props = defaultProps) => {
           ))}
 
           {props.cta ? (<li>
-            <Button
-              href={props.cta.url}
-              target="_blank"
-              class="btn"
-            >
+            <Button href={props.cta.url}>
               {props.cta.label}
             </Button>
           </li>) : null}
@@ -62,3 +58,4 @@ export const Header = component$<HeaderProps>((props = defaultProps) => {
     </header>
   );
 });
+export default Header;

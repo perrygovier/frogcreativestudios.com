@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "storybook-framework-qwik";
-import { Header, defaultProps, type HeaderProps } from "./header";
+import { defaultProps, type HeaderProps } from "./header";
+import Header from "./header";
 
 const meta: Meta<HeaderProps> = {
   component: Header,
