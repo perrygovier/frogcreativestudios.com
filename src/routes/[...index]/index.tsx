@@ -1,5 +1,6 @@
 import { component$ } from "@builder.io/qwik";
-import { DocumentHead, routeLoader$ } from "@builder.io/qwik-city";
+import type { DocumentHead} from "@builder.io/qwik-city";
+import { routeLoader$ } from "@builder.io/qwik-city";
 import {
   getContent,
   RenderContent,
@@ -44,12 +45,15 @@ export default component$(() => {
   // RenderContent component uses `content` prop to render
   // the page, specified by the API Key, at the current URL path.
   return (
+    <div>
+    <h1>Hi</h1>
     <RenderContent
       model="page"
       content={builderContent.value}
       apiKey={import.meta.env.PUBLIC_BUILDER_API_KEY}
       customComponents={CUSTOM_COMPONENTS}
     />
+    </div>
   );
 });
 

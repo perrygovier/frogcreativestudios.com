@@ -10,7 +10,7 @@ interface Link {
 export interface HeaderProps {
   links?: Link[];
   cta?: Link;
-  title: string;
+  title?: string;
 }
 
 export const defaultProps: HeaderProps = {
@@ -24,19 +24,24 @@ export const defaultProps: HeaderProps = {
   title: "FROG Creative Studios",
 }
 
-const Header = component$<HeaderProps>((props = defaultProps) => {
+const Header = component$<HeaderProps>(({
+  links = defaultProps.links,
+  cta = defaultProps.cta,
+  title = defaultProps.title,
+}) => {
   useStyles$(styles);
+
   return (
     <header class="header">
       <nav>
         <div>
           <a href="/" title="FROG Creative Studios" class="logo">
             <FROGLogo height={67} width={97} />
-            <span>{props.title}</span>
+            <span>{title}</span>
           </a>
         </div>
         <ul>
-          {props.links?.map((link, key:number) => (
+          {links?.map((link, key:number) => (
             <li key={`item-${key}`}>
               <a
                 href={link.url}
@@ -48,9 +53,9 @@ const Header = component$<HeaderProps>((props = defaultProps) => {
             </li>
           ))}
 
-          {props.cta ? (<li>
-            <Button href={props.cta.url}>
-              {props.cta.label}
+          {cta ? (<li>
+            <Button href={cta.url}>
+              {cta.label}
             </Button>
           </li>) : null}
         </ul>

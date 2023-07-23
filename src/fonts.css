@@ -6,8 +6,8 @@
 @font-face {
   font-family: 'DIN Condensed';
   src: 
-    url('/fonts/DIN-Condensed_VF.woff2') format('woff2'),
-    url('/fonts/DIN-Condensed_VF.woff') format('woff');
+    url('/fonts/din-condensed_vf.woff2') format('woff2'),
+    url('/fonts/din-condensed_vf.woff') format('woff');
   font-weight: 125 950;
   font-stretch: 75% 125%;
   font-display: swap;

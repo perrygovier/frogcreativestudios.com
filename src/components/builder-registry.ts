@@ -1,4 +1,5 @@
 import type { RegisteredComponent } from "@builder.io/sdk-qwik";
+import { Button } from "./button/button";
 import Counter from "./counter/counter";
 
 /**
@@ -12,6 +13,16 @@ import Counter from "./counter/counter";
  * https://www.builder.io/c/docs/guides/components-only-mode
  */
 export const CUSTOM_COMPONENTS: RegisteredComponent[] = [
+  {
+    component: Button,
+    name: "Button",
+    inputs: [
+      {
+        name: "href",
+        type: "string",
+      },
+    ],
+  },
   {
     component: Counter,
     name: "Counter",
