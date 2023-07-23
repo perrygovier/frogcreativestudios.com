@@ -1,0 +1,28 @@
+.hamburger {
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 400ms;
+  user-select: none;
+}
+.hamburgerRotate.active {
+  transform: rotate(45deg);
+}
+.line {
+  fill:none;
+  transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+  stroke: var(--primary);
+  stroke-width:5.5;
+  stroke-linecap:round;
+}
+.hamburger4 .top {
+  stroke-dasharray: 40 121;
+}
+.hamburger4 .bottom {
+  stroke-dasharray: 40 121;
+}
+.hamburger4.active .top {
+  stroke-dashoffset: -68px;
+}
+.hamburger4.active .bottom {
+  stroke-dashoffset: -68px;
+}

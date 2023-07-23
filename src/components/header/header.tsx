@@ -1,7 +1,8 @@
-import { component$, useStyles$ } from "@builder.io/qwik";
+import { component$, useSignal, useStyles$, $ } from "@builder.io/qwik";
 import styles from "./header.css?inline";
 import { FROGLogo } from "../icons/frog";
 import { Button } from "../button/button";
+import { MenuToggle } from "../menu-toggle/menu-toggle";
 
 interface Link {
   label: string;
@@ -29,7 +30,15 @@ const Header = component$<HeaderProps>(({
   cta = defaultProps.cta,
   title = defaultProps.title,
 }) => {
+
   useStyles$(styles);
+  const mobileMenuActive = useSignal(false);
+
+  const toggle = $(() => mobileMenuActive.value = !mobileMenuActive.value);
+  const close = $(() => mobileMenuActive.value = false);
+  const getMobileMenuClass = () => {
+    return mobileMenuActive.value ? 'mobile-menu-open' : 'mobile-menu-closed';
+  }
 
   return (
     <header class="header">
@@ -40,7 +49,7 @@ const Header = component$<HeaderProps>(({
             <span>{title}</span>
           </a>
         </div>
-        <ul>
+        <ul class={getMobileMenuClass()}>
           {links?.map((link, key:number) => (
             <li key={`item-${key}`}>
               <a
@@ -59,6 +68,11 @@ const Header = component$<HeaderProps>(({
             </Button>
           </li>) : null}
         </ul>
+        <div class="header__MenuToggleWrapper" onClick$={toggle}>
+          <MenuToggle active={mobileMenuActive.value} />
+        </div>
+        <div class={`header__click-catcher ${getMobileMenuClass()}`} 
+             onClick$={close}></div>
       </nav>
     </header>
   );
