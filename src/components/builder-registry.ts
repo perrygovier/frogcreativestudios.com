@@ -1,6 +1,5 @@
 import type { RegisteredComponent } from "@builder.io/sdk-qwik";
 import Button  from "./button/button";
-import Counter from "./counter/counter";
 
 /**
  * This array is used to integrate custom components within Builder.
