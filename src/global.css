@@ -16,8 +16,9 @@
   --fuschia: #eb3391;
   --aqua: #1a9cfb;
   --light: #fffafd;
-  --dark: #333333;
-  --dark-gradient: linear-gradient(180deg, #290015 0%, #333333 100%);
+  --dark: #231F20;
+  --black: #11050f;
+  --dark-gradient: linear-gradient(180deg, var(--black) 0%, var(--dark) 100%);
 
 
   --primary: var(--fuschia);
@@ -61,7 +62,7 @@ p, h1, h2, h3, h4, h5, h6 {
 
 /* Default Styles --------------------------------------------------- */
 html, body {
-  background-color: var(--dark);
+  background-color: var(--black);
   color: var(--light);
   min-height: 100vh;
 }

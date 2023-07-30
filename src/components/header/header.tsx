@@ -1,7 +1,7 @@
 import { component$, useSignal, useStyles$, $ } from "@builder.io/qwik";
 import styles from "./header.css?inline";
 import { FROGLogo } from "../icons/frog";
-import { Button } from "../button/button";
+import Button from "../button/button";
 import { MenuToggle } from "../menu-toggle/menu-toggle";
 
 interface Link {
@@ -25,7 +25,7 @@ export const defaultProps: HeaderProps = {
   title: "FROG Creative Studios",
 }
 
-const Header = component$<HeaderProps>(({
+export default component$<HeaderProps>(({
   links = defaultProps.links,
   cta = defaultProps.cta,
   title = defaultProps.title,
@@ -77,4 +77,3 @@ const Header = component$<HeaderProps>(({
     </header>
   );
 });
-export default Header;

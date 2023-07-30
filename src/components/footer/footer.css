@@ -1,0 +1,60 @@
+.siteFooter {
+  text-align: center;
+  padding: 106px 1rem;
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+    margin-block-end: 2em;
+    flex-wrap: wrap;
+
+    a {
+      color: white;
+      text-decoration: none;
+      curosr: pointer;
+      transition: color 0.2s ease-in-out;
+
+      &:hover {
+        &.btn {
+          color: var(--primary);
+        }
+
+        svg {
+          transform: scale(1.1);
+        }
+      }
+
+      svg {
+        border-radius: 50%;
+        aspect-ratio: 1/1;
+        background-color: var(--primary);
+        display: block;
+        transition: transform 0.2s ease-in-out;
+      }
+    }
+  }
+
+  .FELogo {
+    margin: 0 auto 2em;;
+    display: inline-block;
+
+    &:hover svg {
+      transform: scale(1.03);
+    }
+
+    svg {
+      display: inline;
+      border-radius: 50%;
+      overflow: visible;
+      transition: transform 0.2s ease-in-out;
+    }
+
+    + span {
+      display: block;
+    }
+  }
+}
