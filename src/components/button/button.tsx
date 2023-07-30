@@ -12,6 +12,7 @@ export default component$<ButtonProps>((props) => {
       min-width: 5em;
       text-align: center;
       display: inline-block;
+      text-decoration: none;
       transition: .2s color ease-in-out, .2s background-color ease-in-out;
     }
     .btn:hover {

@@ -1,5 +1,5 @@
 import type { RegisteredComponent } from "@builder.io/sdk-qwik";
-import { Button } from "./button/button";
+import Button  from "./button/button";
 import Counter from "./counter/counter";
 
 /**
@@ -20,17 +20,14 @@ export const CUSTOM_COMPONENTS: RegisteredComponent[] = [
       {
         name: "href",
         type: "string",
+        defaultValue: 'https://google.com',
       },
     ],
-  },
-  {
-    component: Counter,
-    name: "Counter",
-    inputs: [
-      {
-        name: "initialValue",
-        type: "number",
-      },
-    ],
+    defaultChildren: [
+      { 
+        '@type': '@builder.io/sdk:Element',
+        component: { name: 'Text', options: { text: 'I am child text block!' } }
+      }
+    ]
   },
 ];

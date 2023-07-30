@@ -1,3 +1,4 @@
+import type { FunctionComponent, JSXNode} from "@builder.io/qwik";
 import { component$, useStyles$ } from "@builder.io/qwik";
 import styles from "./footer.css?inline";
 import { TwitterLogo } from "../icons/twitter";
@@ -5,29 +6,51 @@ import { InstagramLogo } from "../icons/instagram";
 import { FacebookLogo } from "../icons/facebook";
 import { FrogEnterprisesLogo } from "../icons/frogEnterprises";
 
-export default component$(() => {
+interface Link {
+  label: string;
+  url: string;
+}
+interface SocialLink {
+  icon: JSXNode<string | FunctionComponent<Record<string, any>>>;
+  url: string;
+}
+
+export interface FooterProps {
+  footerLinks: Link[];
+  socialLinks: SocialLink[];
+  copyright: string;
+}
+
+export const defaultProps: FooterProps = {
+  footerLinks: [
+    { url: "/about", label: "About" },
+    { url: "/artists", label: "The Artists" },
+    { url: "/shop", label: "Shop" },
+    { url: "/contact", label: "Contact" },
+  ],
+  socialLinks: [
+    { url: "https://twitter.com", icon: <TwitterLogo /> },
+    { url: "https://facebook.com", icon: <FacebookLogo /> },
+    { url: "https://instagram.com", icon: <InstagramLogo /> },
+  ],
+  copyright: "©2023 FROG Enterprises Inc. All rights reserved.",
+}
+
+
+export default component$<FooterProps>(({
+  footerLinks = defaultProps.footerLinks,
+  socialLinks = defaultProps.socialLinks,
+  copyright = defaultProps.copyright,
+}) => {
   useStyles$(styles);
-
-  const socialLinks = [
-    { href: "https://twitter.com", icon: <TwitterLogo /> },
-    { href: "https://facebook.com", icon: <FacebookLogo /> },
-    { href: "https://instagram.com", icon: <InstagramLogo /> },
-  ];
-
-  const footerLinks = [
-    { href: "/about", name: "About" },
-    { href: "/artists", name: "The Artists" },
-    { href: "/shop", name: "Shop" },
-    { href: "/contact", name: "Contact" },
-  ];
 
   return (
     <footer class="siteFooter">
       <nav>
         <ul>
-          {socialLinks.map( (link, key) => (
+          {socialLinks.map( (link: SocialLink, key: number) => (
             <li key={key}>
-              <a href={link.href}>
+              <a href={link.url}>
                 {link.icon}
               </a>
             </li>
@@ -36,17 +59,17 @@ export default component$(() => {
         <ul>
           {footerLinks.map( (link, key) => (
             <li key={key}>
-              <a href={link.href} class="btn">
-                {link.name}
+              <a href={link.url} class="btn">
+                {link.label}
               </a>
             </li>
           ))}
         </ul>
       </nav>
-      <a href="" class="FELogo">
+      <a href="/" class="FELogo">
         <FrogEnterprisesLogo />
       </a>
-      <span>©2023 FROG Enterprises Inc. All rights reserved.</span>
+      <span>{copyright}</span>
     </footer>
   );
 });
