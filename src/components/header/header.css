@@ -42,6 +42,9 @@
         font-size: 39px;
         max-width: 190px;
       }
+      @media (max-width: 374px) {
+        font-size: 30px;
+      }
     }
   }
 
