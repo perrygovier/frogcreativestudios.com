@@ -1,5 +1,6 @@
 import type { RegisteredComponent } from "@builder.io/sdk-qwik";
-import Button  from "./button/button";
+import Button from "./button/button";
+import Hero from "./hero/hero";
 
 /**
  * This array is used to integrate custom components within Builder.
@@ -17,9 +18,33 @@ export const CUSTOM_COMPONENTS: RegisteredComponent[] = [
     name: "Button",
     inputs: [
       {
-        name: "href",
+        name: "url",
         type: "string",
         defaultValue: 'https://google.com',
+      },
+    ],
+    defaultChildren: [
+      { 
+        '@type': '@builder.io/sdk:Element',
+        component: { name: 'Text', options: { text: 'I am child text block!' } }
+      }
+    ]
+  },
+  {
+    component: Hero,
+    name: "Hero",
+    inputs: [
+      {
+        name: "Image",
+        type: "file",
+        allowedFileTypes: ['jpeg', 'jpg', 'png', 'svg'],
+        required: true,
+        defaultValue: 'https://picsum.photos/1360/907',
+      },
+      {
+        name: "Image Alt",
+        type: "string",
+        defaultValue: 'Hero Image Description',
       },
     ],
     defaultChildren: [

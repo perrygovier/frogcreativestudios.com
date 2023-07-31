@@ -46,7 +46,6 @@ export default component$(() => {
   // the page, specified by the API Key, at the current URL path.
   return (
     <div>
-    <h1>Hi</h1>
     <RenderContent
       model="page"
       content={builderContent.value}
