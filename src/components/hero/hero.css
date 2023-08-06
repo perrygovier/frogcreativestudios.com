@@ -1,3 +1,38 @@
 .hero {
-  background: blue;
+  --imageStop: 30%;
+  margin: -105px 0 0 0;
+  padding: 200px 0 50px 0;
+  position: relative;
+
+  .hero__image {
+    position: absolute;
+    top: 0; 
+    right: 0;
+    bottom: var(--imageStop, 30%);
+    left: 0;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    height: calc(100% - var(--imageStop, 30%));
+  }
+
+  .hero__mask {
+    position: absolute;
+    top: 0; 
+    right: 0;
+    bottom: var(--imageStop, 30%);
+    left: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0.50) 0%, var(--black, #000) 100%);
+  }
+
+  .hero__content {
+    margin: 0 auto;
+    max-width: 667px;
+    position: relative;
+    z-index: 1;
+
+    h1, h2, h3 {
+      text-align: center;
+    }
+  }
 }

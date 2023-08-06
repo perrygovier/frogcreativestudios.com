@@ -52,6 +52,9 @@ export default component$(() => {
       apiKey={import.meta.env.PUBLIC_BUILDER_API_KEY}
       customComponents={CUSTOM_COMPONENTS}
     />
+    {/* <code><pre>
+    {JSON.stringify(builderContent.value, null, "  ")}
+    </pre></code> */}
     </div>
   );
 });

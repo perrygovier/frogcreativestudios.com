@@ -1,6 +1,7 @@
 import type { RegisteredComponent } from "@builder.io/sdk-qwik";
 import Button from "./button/button";
 import Hero from "./hero/hero";
+import PingPong from "./ping-pong/ping-pong";
 
 /**
  * This array is used to integrate custom components within Builder.
@@ -35,16 +36,46 @@ export const CUSTOM_COMPONENTS: RegisteredComponent[] = [
     name: "Hero",
     inputs: [
       {
-        name: "Image",
+        name: "url",
         type: "file",
+        friendlyName: "Background Image",
         allowedFileTypes: ['jpeg', 'jpg', 'png', 'svg'],
         required: true,
         defaultValue: 'https://picsum.photos/1360/907',
       },
       {
-        name: "Image Alt",
+        name: "alt",
         type: "string",
+        friendlyName: "Image Description",
+        required: true,
         defaultValue: 'Hero Image Description',
+      },
+    ],
+    defaultChildren: [
+      { 
+        '@type': '@builder.io/sdk:Element',
+        component: { name: 'Text', options: { text: 'I am child text block!' } }
+      }
+    ]
+  },
+  {
+    component: PingPong,
+    name: "PingPong",
+    inputs: [
+      {
+        name: "url",
+        type: "file",
+        friendlyName: "Side Image",
+        allowedFileTypes: ['jpeg', 'jpg', 'png', 'svg'],
+        required: true,
+        defaultValue: 'https://picsum.photos/1360/907',
+      },
+      {
+        name: "alt",
+        type: "string",
+        friendlyName: "Image Description",
+        required: true,
+        defaultValue: 'Image Description',
       },
     ],
     defaultChildren: [

@@ -16,9 +16,9 @@ interface SocialLink {
 }
 
 export interface FooterProps {
-  footerLinks: Link[];
-  socialLinks: SocialLink[];
-  copyright: string;
+  footerLinks?: Link[];
+  socialLinks?: SocialLink[];
+  copyright?: string;
 }
 
 export const defaultProps: FooterProps = {
@@ -48,7 +48,7 @@ export default component$<FooterProps>(({
     <footer class="siteFooter">
       <nav>
         <ul>
-          {socialLinks.map( (link: SocialLink, key: number) => (
+          {socialLinks?.map( (link: SocialLink, key: number) => (
             <li key={key}>
               <a href={link.url}>
                 {link.icon}
@@ -57,7 +57,7 @@ export default component$<FooterProps>(({
           ))}
         </ul>
         <ul>
-          {footerLinks.map( (link, key) => (
+          {footerLinks?.map( (link, key) => (
             <li key={key}>
               <a href={link.url} class="btn">
                 {link.label}

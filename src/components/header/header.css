@@ -2,7 +2,8 @@
   border-block-end: 1px solid #fff;
   color: white;
   width: 100%;
-  margin-block-end: 1rem;
+  position: relative;
+  z-index: 1;
 
   nav {
     width: 100%;
