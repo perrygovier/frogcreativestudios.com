@@ -15,8 +15,12 @@ const PingPong = component$<PingPongProps>((props = defaultProps) => {
   useStyles$(styles);
   return (
     <section class="pingPong">
-      <img class="pingPong__image" src={props.url} alt={props.alt}/>
-      <Slot></Slot>
+      <div class="pingPong__left">
+        <Slot></Slot>
+      </div>
+      <div class="pingPong__right">
+        <img class="pingPong__image" src={props.url} alt={props.alt}/>
+      </div>
     </section>
   );
 });
