@@ -1,8 +1,13 @@
-import { component$, useSignal, useStyles$, $ } from "@builder.io/qwik";
+import { 
+  component$, 
+  // useSignal, 
+  useStyles$, 
+  // $ 
+} from "@builder.io/qwik";
 import styles from "./header.css?inline";
 import { FROGLogo } from "../icons/frog";
-import Button from "../button/button";
-import { MenuToggle } from "../menu-toggle/menu-toggle";
+// import Button from "../button/button";
+// import { MenuToggle } from "../menu-toggle/menu-toggle";
 
 interface Link {
   label: string;
@@ -26,19 +31,19 @@ export const defaultProps: HeaderProps = {
 }
 
 export default component$<HeaderProps>(({
-  links = defaultProps.links,
-  cta = defaultProps.cta,
+  // links = defaultProps.links,
+  // cta = defaultProps.cta,
   title = defaultProps.title,
 }) => {
 
   useStyles$(styles);
-  const mobileMenuActive = useSignal(false);
+  // const mobileMenuActive = useSignal(false);
 
-  const toggle = $(() => mobileMenuActive.value = !mobileMenuActive.value);
-  const close = $(() => mobileMenuActive.value = false);
-  const getMobileMenuClass = () => {
-    return mobileMenuActive.value ? 'mobile-menu-open' : 'mobile-menu-closed';
-  }
+  // const toggle = $(() => mobileMenuActive.value = !mobileMenuActive.value);
+  // const close = $(() => mobileMenuActive.value = false);
+  // const getMobileMenuClass = () => {
+  //   return mobileMenuActive.value ? 'mobile-menu-open' : 'mobile-menu-closed';
+  // }
 
   return (
     <header class="header">

@@ -1,8 +1,8 @@
 import type { FunctionComponent, JSXNode} from "@builder.io/qwik";
 import { component$, useStyles$ } from "@builder.io/qwik";
 import styles from "./footer.css?inline";
-import { TwitterLogo } from "../icons/twitter";
-import { InstagramLogo } from "../icons/instagram";
+// import { TwitterLogo } from "../icons/twitter";
+// import { InstagramLogo } from "../icons/instagram";
 import { FacebookLogo } from "../icons/facebook";
 import { FrogEnterprisesLogo } from "../icons/frogEnterprises";
 
@@ -38,7 +38,7 @@ export const defaultProps: FooterProps = {
 
 
 export default component$<FooterProps>(({
-  footerLinks = defaultProps.footerLinks,
+  // footerLinks = defaultProps.footerLinks,
   socialLinks = defaultProps.socialLinks,
   copyright = defaultProps.copyright,
 }) => {
