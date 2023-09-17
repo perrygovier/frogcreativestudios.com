@@ -29,9 +29,9 @@ export const defaultProps: FooterProps = {
     { url: "/contact", label: "Contact" },
   ],
   socialLinks: [
-    { url: "https://twitter.com", icon: <TwitterLogo /> },
-    { url: "https://facebook.com", icon: <FacebookLogo /> },
-    { url: "https://instagram.com", icon: <InstagramLogo /> },
+    // { url: "https://twitter.com", icon: <TwitterLogo /> },
+    { url: "https://www.facebook.com/frogcreativestudios", icon: <FacebookLogo /> },
+    // { url: "https://instagram.com", icon: <InstagramLogo /> },
   ],
   copyright: "©2023 FROG Enterprises Inc. All rights reserved.",
 }
@@ -56,7 +56,7 @@ export default component$<FooterProps>(({
             </li>
           ))}
         </ul>
-        <ul>
+        {/* <ul>
           {footerLinks?.map( (link, key) => (
             <li key={key}>
               <a href={link.url} class="btn">
@@ -64,7 +64,7 @@ export default component$<FooterProps>(({
               </a>
             </li>
           ))}
-        </ul>
+        </ul> */}
       </nav>
       <a href="/" class="FELogo">
         <FrogEnterprisesLogo />

@@ -49,7 +49,7 @@ export default component$<HeaderProps>(({
             <span>{title}</span>
           </a>
         </div>
-        <ul class={getMobileMenuClass()}>
+        {/* <ul class={getMobileMenuClass()}>
           {links?.map((link, key:number) => (
             <li key={`item-${key}`}>
               <a
@@ -72,7 +72,7 @@ export default component$<HeaderProps>(({
           <MenuToggle active={mobileMenuActive.value} />
         </div>
         <div class={`header__click-catcher ${getMobileMenuClass()}`} 
-             onClick$={close}></div>
+             onClick$={close}></div> */}
       </nav>
     </header>
   );
