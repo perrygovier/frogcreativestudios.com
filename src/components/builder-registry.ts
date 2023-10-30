@@ -3,7 +3,6 @@ import Button from "./button/button";
 import Hero from "./hero/hero";
 import PingPong from "./ping-pong/ping-pong";
 import Container, { ALL_MODES } from "./container/container";
-import { ContainerProps } from "./container/container";
 
 /**
  * This array is used to integrate custom components within Builder.
@@ -92,12 +91,12 @@ export const CUSTOM_COMPONENTS: RegisteredComponent[] = [
     name: "Container",
     inputs: [
       {
-        name: "alt",
+        name: "mode",
         type: "string",
         enum: ALL_MODES as unknown as string[],
-        friendlyName: "Image Description",
+        friendlyName: "Color Mode",
         required: true,
-        defaultValue: 'Image Description',
+        defaultValue: ALL_MODES[0],
       },
     ],
     defaultChildren: [
