@@ -1,11 +1,8 @@
 import { Slot, component$, useStyles$ } from '@builder.io/qwik';
 import styles from './container.css?inline';
 
-export const ALL_MODES = ['light', 'dark'] as const;
-type ModeTuple = typeof ALL_MODES;
-
 export interface ContainerProps {
-  mode: ModeTuple[number];
+  mode: 'light' | 'dark';
 }
 
 export const defaultProps: ContainerProps = {

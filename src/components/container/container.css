@@ -1,4 +1,15 @@
 .container {
-    max-width: 1200px;
-    padding: 15px;
+    --content-width: 1168px;
+    --gutter: 32px;
+
+    max-width: var(--content-width)
+    padding: 0 var(--gutter);
+    margin: 0 auto;
+}
+
+@media only screen and (max-width: 1216px) {
+    .container {
+        --content-width: 100%;
+        --gutter: 16px;
+    }
 }

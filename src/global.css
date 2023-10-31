@@ -116,6 +116,10 @@ main {
   p {
     font-size: 18px;
   }
+
+  > * {
+    margin: 0 auto;
+  }
 }
 
 /* Custom Builder CSS Class ----------------------------------------- 

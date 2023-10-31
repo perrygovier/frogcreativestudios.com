@@ -2,7 +2,7 @@ import type { RegisteredComponent } from "@builder.io/sdk-qwik";
 import Button from "./button/button";
 import Hero from "./hero/hero";
 import PingPong from "./ping-pong/ping-pong";
-import Container, { ALL_MODES } from "./container/container";
+import Container from "./container/container";
 
 /**
  * This array is used to integrate custom components within Builder.
@@ -93,10 +93,10 @@ export const CUSTOM_COMPONENTS: RegisteredComponent[] = [
       {
         name: "mode",
         type: "string",
-        enum: ALL_MODES as unknown as string[],
+        enum: ['light', 'dark'],
         friendlyName: "Color Mode",
         required: true,
-        defaultValue: ALL_MODES[0],
+        defaultValue: 'light',
       },
     ],
     defaultChildren: [
