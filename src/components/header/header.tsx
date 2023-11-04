@@ -1,13 +1,13 @@
 import { 
   component$, 
-  // useSignal, 
+  useSignal, 
   useStyles$, 
-  // $ 
+  $ 
 } from "@builder.io/qwik";
 import styles from "./header.css?inline";
 import { FROGLogo } from "../icons/frog";
-// import Button from "../button/button";
-// import { MenuToggle } from "../menu-toggle/menu-toggle";
+import Button from "../button/button";
+import { MenuToggle } from "../menu-toggle/menu-toggle";
 
 interface Link {
   label: string;
@@ -23,27 +23,27 @@ export const defaultProps: HeaderProps = {
   links: [
     {label: "About", url: "/about"},
     {label: "The Artists", url: "/artists"},
-    {label: "Paint by Numbers", url: "/shop/paint-by-numbers"},
-    {label: "Puzzles", url: "/shop/puzzles"},
+    {label: "Paint by Numbers", url: "/shop#paint-by-numbers"},
+    {label: "Puzzles", url: "/shop#puzzles"},
   ],
   cta: {label: "Shop", url: "/shop"},
   title: "FROG Creative Studios",
 }
 
 export default component$<HeaderProps>(({
-  // links = defaultProps.links,
-  // cta = defaultProps.cta,
+  links = defaultProps.links,
+  cta = defaultProps.cta,
   title = defaultProps.title,
 }) => {
 
   useStyles$(styles);
-  // const mobileMenuActive = useSignal(false);
+  const mobileMenuActive = useSignal(false);
 
-  // const toggle = $(() => mobileMenuActive.value = !mobileMenuActive.value);
-  // const close = $(() => mobileMenuActive.value = false);
-  // const getMobileMenuClass = () => {
-  //   return mobileMenuActive.value ? 'mobile-menu-open' : 'mobile-menu-closed';
-  // }
+  const toggle = $(() => mobileMenuActive.value = !mobileMenuActive.value);
+  const close = $(() => mobileMenuActive.value = false);
+  const getMobileMenuClass = () => {
+    return mobileMenuActive.value ? 'mobile-menu-open' : 'mobile-menu-closed';
+  }
 
   return (
     <header class="header">
@@ -54,7 +54,7 @@ export default component$<HeaderProps>(({
             <span>{title}</span>
           </a>
         </div>
-        {/* <ul class={getMobileMenuClass()}>
+        <ul class={getMobileMenuClass()}>
           {links?.map((link, key:number) => (
             <li key={`item-${key}`}>
               <a
@@ -77,7 +77,7 @@ export default component$<HeaderProps>(({
           <MenuToggle active={mobileMenuActive.value} />
         </div>
         <div class={`header__click-catcher ${getMobileMenuClass()}`} 
-             onClick$={close}></div> */}
+             onClick$={close}></div>
       </nav>
     </header>
   );

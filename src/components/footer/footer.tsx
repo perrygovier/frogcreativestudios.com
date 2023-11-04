@@ -2,7 +2,7 @@ import type { FunctionComponent, JSXNode} from "@builder.io/qwik";
 import { component$, useStyles$ } from "@builder.io/qwik";
 import styles from "./footer.css?inline";
 // import { TwitterLogo } from "../icons/twitter";
-// import { InstagramLogo } from "../icons/instagram";
+import { InstagramLogo } from "../icons/instagram";
 import { FacebookLogo } from "../icons/facebook";
 import { FrogEnterprisesLogo } from "../icons/frogEnterprises";
 
@@ -31,14 +31,14 @@ export const defaultProps: FooterProps = {
   socialLinks: [
     // { url: "https://twitter.com", icon: <TwitterLogo /> },
     { url: "https://www.facebook.com/frogcreativestudios", icon: <FacebookLogo /> },
-    // { url: "https://instagram.com", icon: <InstagramLogo /> },
+    { url: "https://instagram.com/frogcreativestudios", icon: <InstagramLogo /> },
   ],
   copyright: "©2023 FROG Enterprises Inc. All rights reserved.",
 }
 
 
 export default component$<FooterProps>(({
-  // footerLinks = defaultProps.footerLinks,
+  footerLinks = defaultProps.footerLinks,
   socialLinks = defaultProps.socialLinks,
   copyright = defaultProps.copyright,
 }) => {
@@ -56,7 +56,7 @@ export default component$<FooterProps>(({
             </li>
           ))}
         </ul>
-        {/* <ul>
+        <ul>
           {footerLinks?.map( (link, key) => (
             <li key={key}>
               <a href={link.url} class="btn">
@@ -64,7 +64,7 @@ export default component$<FooterProps>(({
               </a>
             </li>
           ))}
-        </ul> */}
+        </ul>
       </nav>
       <a href="/" class="FELogo">
         <FrogEnterprisesLogo />
