@@ -2,7 +2,7 @@
     --content-width: 1168px;
     --gutter: 32px;
 
-    max-width: var(--content-width)
+    max-width: var(--content-width);
     padding: 0 var(--gutter);
     margin: 0 auto;
 }

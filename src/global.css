@@ -135,3 +135,9 @@ main {
   color: var(--qwik-light-blue);
   text-decoration: underline;
 }
+
+/* Custom Builder Compatibility ---------------------------------------- */
+
+.builder-custom-code {
+  color: var(--dark);
+}
