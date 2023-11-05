@@ -50,7 +50,7 @@ export default component$<FooterProps>(({
         <ul>
           {socialLinks?.map( (link: SocialLink, key: number) => (
             <li key={key}>
-              <a href={link.url}>
+              <a href={link.url} target="_blank">
                 {link.icon}
               </a>
             </li>
