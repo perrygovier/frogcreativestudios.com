@@ -147,6 +147,7 @@ main {
 
 .builder-custom-code img {
   margin-top: 20px;
+  aspect-ratio: 1/1;
 }
 .builder-custom-code div > p:first-child {
   min-height: 40px;

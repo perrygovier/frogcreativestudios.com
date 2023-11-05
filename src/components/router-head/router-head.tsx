@@ -9,6 +9,12 @@ export const RouterHead = component$(() => {
   const head = useDocumentHead();
   const loc = useLocation();
 
+  const analytics = `window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-272SV4FCHP');`;
+
   const schema = `
     {
       "@context": "https://schema.org/",
@@ -24,7 +30,7 @@ export const RouterHead = component$(() => {
 
   return (
     <>
-      <title>{head.title}</title>
+      <title>{head.title + ' | Frog Creative Studios'}</title>
 
       <link rel="canonical" href={loc.url.href} />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -35,11 +41,9 @@ export const RouterHead = component$(() => {
       ))}
 
       {/* <QwikPartytown forward={['dataLayer.push']} /> */}
-      <script
-        async
-        type="text/javascript"
-        src="https://www.googletagmanager.com/gtag/js?id=G-272SV4FCHP"
-      />
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-272SV4FCHP"></script>
+      <script dangerouslySetInnerHTML={analytics}></script>
+
       {head.links.map((l) => (
         <link key={l.key} {...l} />
       ))}
