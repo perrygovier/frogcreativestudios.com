@@ -1,6 +1,6 @@
 import { component$ } from "@builder.io/qwik";
 import { useDocumentHead, useLocation } from "@builder.io/qwik-city";
-import { QwikPartytown } from '../partytown/partytown';
+// import { QwikPartytown } from '../partytown/partytown';
 
 /**
  * The RouterHead component is placed inside of the document `<head>` element.
@@ -34,10 +34,10 @@ export const RouterHead = component$(() => {
         <meta key={m.key} {...m} />
       ))}
 
-      <QwikPartytown forward={['dataLayer.push']} />
+      {/* <QwikPartytown forward={['dataLayer.push']} /> */}
       <script
         async
-        type="text/partytown"
+        type="text/javascript"
         src="https://www.googletagmanager.com/gtag/js?id=G-272SV4FCHP"
       />
       {head.links.map((l) => (
