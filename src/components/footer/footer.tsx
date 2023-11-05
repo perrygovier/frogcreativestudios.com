@@ -24,7 +24,7 @@ export interface FooterProps {
 export const defaultProps: FooterProps = {
   footerLinks: [
     { url: "/about", label: "About" },
-    { url: "/artists", label: "The Artists" },
+    // { url: "/artists", label: "The Artists" },
     { url: "/shop", label: "Shop" },
     { url: "/contact", label: "Contact" },
   ],

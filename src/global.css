@@ -113,8 +113,11 @@ main {
     text-decoration: none;
   }
 
-  p {
+  p,
+  .builder-text > p,
+  .builder-text > .builder-paragraph {
     font-size: 18px;
+    line-height: 1.6;
   }
 
   > * {
@@ -140,4 +143,11 @@ main {
 
 .builder-custom-code {
   color: var(--dark);
+}
+
+.builder-custom-code img {
+  margin-top: 20px;
+}
+.builder-custom-code div > p:first-child {
+  min-height: 40px;
 }

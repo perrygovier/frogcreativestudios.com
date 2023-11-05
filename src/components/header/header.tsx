@@ -22,7 +22,7 @@ export interface HeaderProps {
 export const defaultProps: HeaderProps = {
   links: [
     {label: "About", url: "/about"},
-    {label: "The Artists", url: "/artists"},
+    // {label: "The Artists", url: "/artists"},
     {label: "Paint by Numbers", url: "/shop#paint-by-numbers"},
     {label: "Puzzles", url: "/shop#puzzles"},
   ],
@@ -59,7 +59,6 @@ export default component$<HeaderProps>(({
             <li key={`item-${key}`}>
               <a
                 href={link.url}
-                target="_blank"
                 class="btn header__link"
               >
                 {link.label}
