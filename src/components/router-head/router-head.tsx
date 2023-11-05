@@ -10,17 +10,17 @@ export const RouterHead = component$(() => {
   const loc = useLocation();
 
   const schema = `
-  {
-    "@context": "https://schema.org/",
-    "@type": "Corporation",
-    "name": "Frog Creative Studios",
-    "url": "https://frogcreativestudios.com",
-    "logo": "https://frogcreativestudios.com/images/logo.png",
-    "sameAs": [
-      "https://www.facebook.com/frogcreativestudios",
-      "https://www.instagram.com/frogcreativestudios/"
-    ]
-  }`;
+    {
+      "@context": "https://schema.org/",
+      "@type": "Corporation",
+      "name": "Frog Creative Studios",
+      "url": "https://frogcreativestudios.com",
+      "logo": "https://frogcreativestudios.com/images/logo.png",
+      "sameAs": [
+        "https://www.facebook.com/frogcreativestudios",
+        "https://www.instagram.com/frogcreativestudios/"
+      ]
+    }`;
 
   return (
     <>
