@@ -67,10 +67,7 @@ export const RouterHead = component$(() => {
       <meta name="twitter:description" content="Paint by Number Kits and Puzzles featuring the work of local Northwoods artists." />
       <meta name="twitter:image" content="http://frogcreativestudios.com/images/og.png" />
 
-      <script type="application/ld+json">
-        ${schema}
-      </script>
-        
+      <script type="application/ld+json" dangerouslySetInnerHTML={schema}></script>
     </>
   );
 });
