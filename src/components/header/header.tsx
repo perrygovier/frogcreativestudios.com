@@ -75,7 +75,7 @@ export default component$<HeaderProps>(({
             </Button>
           </li>) : null}
         </ul>
-        <div class="header__MenuToggleWrapper" onClick$={toggle}>
+        <div class="header__MenuToggleWrapper" onClick$={() => toggle()}>
           <MenuToggle active={mobileMenuActive.value} />
         </div>
         <div class={`header__click-catcher ${getMobileMenuClass()}`} 

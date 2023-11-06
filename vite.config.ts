@@ -4,13 +4,13 @@ import { qwikCity } from "@builder.io/qwik-city/vite";
 import { builderDevTools } from "@builder.io/dev-tools/vite";
 import tsconfigPaths from "vite-tsconfig-paths";
 import { partytownVite } from "@builder.io/partytown/utils";
-import { cloudflarePagesAdapter } from "@builder.io/qwik-city/adapters/cloudflare-pages/vite";
+// import { cloudflarePagesAdapter } from "@builder.io/qwik-city/adapters/cloudflare-pages/vite";
 import { join } from "path";
 
 export default defineConfig(() => {
   return {
     plugins: [
-      cloudflarePagesAdapter(),
+      // cloudflarePagesAdapter(),
       builderDevTools(),
       qwikCity(),
       qwikVite(),
