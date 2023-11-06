@@ -71,7 +71,7 @@ export default component$<HeaderProps>(({
 
           {cta ? (<li>
             <Button href={cta.url}>
-              {cta.label}, yo
+              {cta.label}
             </Button>
           </li>) : null}
         </ul>
