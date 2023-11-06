@@ -3,7 +3,7 @@ import { component$, useStylesScoped$, Slot } from "@builder.io/qwik";
 export interface ButtonProps {
   href?: string;
 }
-export default component$<ButtonProps>((props) => {
+export default component$<ButtonProps>(({href = "/shop"}) => {
   useStylesScoped$(`
     .btn {
       background-color: var(--primary);
@@ -23,7 +23,7 @@ export default component$<ButtonProps>((props) => {
   return (
     <a
       class="btn"
-      href={props.href}
+      href={href}
     >
       <Slot></Slot>
     </a>
