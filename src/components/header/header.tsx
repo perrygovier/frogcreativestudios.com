@@ -41,9 +41,6 @@ export default component$<HeaderProps>(({
 
   const toggle = $(() => mobileMenuActive.value = !mobileMenuActive.value);
   const close = $(() => mobileMenuActive.value = false);
-  const getMobileMenuClass = () => {
-    return mobileMenuActive.value ? 'mobile-menu-open' : 'mobile-menu-closed';
-  }
 
   return (
     <header class="header">
@@ -54,7 +51,7 @@ export default component$<HeaderProps>(({
             <span>{title}</span>
           </a>
         </div>
-        <ul class={getMobileMenuClass()}>
+        <ul class={mobileMenuActive.value ? 'mobile-menu-open' : 'mobile-menu-closed'}>
           {links?.map((link, key:number) => (
             <li key={`item-${key}`}>
               <a
@@ -75,7 +72,7 @@ export default component$<HeaderProps>(({
         <div class="header__MenuToggleWrapper" onClick$={toggle}>
           <MenuToggle active={mobileMenuActive.value} />
         </div>
-        <div class={`header__click-catcher ${getMobileMenuClass()}`} 
+        <div class={`header__click-catcher ${mobileMenuActive.value ? 'mobile-menu-open' : 'mobile-menu-closed'}`} 
              onClick$={close}></div>
       </nav>
     </header>
