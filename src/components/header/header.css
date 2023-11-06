@@ -51,7 +51,7 @@
         font-size: 39px;
         max-width: 190px;
       }
-      @media (max-width: 374px) {
+      @media (max-width: 400px) {
         font-size: 30px;
       }
     }
