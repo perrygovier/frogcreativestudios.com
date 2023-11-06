@@ -39,10 +39,12 @@ export default component$<HeaderProps>(({
   useStyles$(styles);
   const mobileMenuActive = useSignal(false);
 
-  const toggle = $(() => mobileMenuActive.value = !mobileMenuActive.value);
+  const toggle = $(() => {
+    console.log("test", mobileMenuActive, mobileMenuActive.value, this);
+    mobileMenuActive.value = !mobileMenuActive.value;
+  });
   const close = $(() => mobileMenuActive.value = false);
   const getMobileMenuClass = () => {
-    console.log("test", mobileMenuActive, mobileMenuActive.value, this);
     return mobileMenuActive.value ? 'mobile-menu-open' : 'mobile-menu-closed';
   }
 
