@@ -39,11 +39,11 @@ export default component$<HeaderProps>(({
   useStyles$(styles);
   const mobileMenuActive = useSignal(false);
 
-  const toggle = $(() => {
-    console.log("test", mobileMenuActive, mobileMenuActive.value, this);
-    mobileMenuActive.value = !mobileMenuActive.value;
-  });
-  const close = $(() => mobileMenuActive.value = false);
+  // const toggle = $(() => {
+  //   console.log("test", mobileMenuActive, mobileMenuActive.value, this);
+  //   mobileMenuActive.value = !mobileMenuActive.value;
+  // });
+  // const close = $(() => mobileMenuActive.value = false);
   const getMobileMenuClass = () => {
     return mobileMenuActive.value ? 'mobile-menu-open' : 'mobile-menu-closed';
   }
@@ -75,11 +75,11 @@ export default component$<HeaderProps>(({
             </Button>
           </li>) : null}
         </ul>
-        <div class="header__MenuToggleWrapper" onClick$={() => toggle()}>
+        {/* <div class="header__MenuToggleWrapper" onClick$={() => toggle()}>
           <MenuToggle active={mobileMenuActive.value} />
         </div>
         <div class={`header__click-catcher ${getMobileMenuClass()}`} 
-             onClick$={close}></div>
+             onClick$={close}></div> */}
       </nav>
     </header>
   );
