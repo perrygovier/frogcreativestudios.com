@@ -2,12 +2,12 @@ import {
   component$, 
   useSignal, 
   useStyles$, 
-  $ 
+  // $ 
 } from "@builder.io/qwik";
 import styles from "./header.css?inline";
 import { FROGLogo } from "../icons/frog";
 import Button from "../button/button";
-import { MenuToggle } from "../menu-toggle/menu-toggle";
+// import { MenuToggle } from "../menu-toggle/menu-toggle";
 
 interface Link {
   label: string;
