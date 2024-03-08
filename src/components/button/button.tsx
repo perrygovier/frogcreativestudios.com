@@ -19,6 +19,9 @@ export default component$<ButtonProps>(({href = "/shop"}) => {
       color: var(--primary);
       background-color: var(--light);
     }
+    .btn .builder-text {
+      min-width: 100%;
+    }
   `);
   return (
     <a

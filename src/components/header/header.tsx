@@ -58,7 +58,7 @@ export default component$<HeaderProps>(({
           </a>
         </div>
         <ul class={getMobileMenuClass()}>
-          {/*links?.map((link, key:number) => (
+          {links?.map((link, key:number) => (
             <li key={`item-${key}`}>
               <a
                 href={link.url}
@@ -72,12 +72,6 @@ export default component$<HeaderProps>(({
           {cta ? (<li>
             <Button href={cta.url}>
               {cta.label}
-            </Button>
-          </li>) : null*/}
-
-          {links && links[0] ? (<li>
-            <Button href={links[0].url}>
-              {links[0].label}
             </Button>
           </li>) : null}
         </ul>
